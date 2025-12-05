@@ -1,0 +1,9 @@
+def calculate_energy_score(cpu, mem):
+    """
+    Simple GreenOps score:
+    - Low CPU & memory = high energy efficiency
+    """
+    cpu_score = max(0, 100 - cpu)
+    mem_score = max(0, 100 - (mem / 10))  # simple scaling
+    score = (cpu_score + mem_score) / 2
+    return round(score, 2)
